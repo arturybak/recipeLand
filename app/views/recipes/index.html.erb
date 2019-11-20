@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recipes</h1>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <h2><%= link_to recipe.title, recipe %></h2>
+    <% end %>
+  </tbody>
+
+<br>

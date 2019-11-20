@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Title:</strong>
+  <%= @recipe.title %>
+</h1>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+
+<%= link_to 'Back', root_path, class: "btn btn-default" %>
+<%= link_to 'Edit', edit_recipe_path, class: "btn btn-default" %>
+<%= link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default" %>
