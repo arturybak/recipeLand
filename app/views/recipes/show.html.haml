@@ -1,0 +1,10 @@
+%p.notice= notice
+
+%h1= @recipe.title
+= image_tag(@recipe.image, style:"width:400px; height:auto")
+
+%p= @recipe.description
+
+= link_to 'Back', root_path, class: "btn btn-default"
+= link_to 'Edit', edit_recipe_path, class: "btn btn-default"
+= link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"

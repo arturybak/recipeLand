@@ -30,4 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_title: Recipe Land
+  app_description: A blog where you can share all your favourite recipes.
+  add_recipe: Add Recipe
+  sign_out: Sign Out
+  sign in: sign In

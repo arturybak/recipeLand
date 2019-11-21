@@ -71,3 +71,6 @@ gem 'jquery-rails'
 
 #SIMPLEFORM
 gem 'simple_form'
+
+#HAML
+gem 'haml-rails'

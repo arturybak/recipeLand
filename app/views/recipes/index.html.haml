@@ -1,0 +1,8 @@
+%p.notice= notice
+
+- @recipes.each do |recipe|
+  = link_to recipe do
+    = image_tag recipe.image
+  %h2= link_to recipe.title, recipe
+
+%br\
