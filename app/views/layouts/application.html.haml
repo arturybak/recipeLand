@@ -19,11 +19,16 @@
       .container
         .navbar-brand= link_to "Recipe Land", root_path
 
-        %ul.nav.navbar-nav.navbar-right
-          %li= link_to t('add_recipe'), new_recipe_path
-          %li= link_to t('sign_out'), root_path
+        - if user_signed_in?
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to t('add_recipe'), new_recipe_path
+            %li= link_to t('sign_out'), destroy_user_session_path, method: :delete
+        - else
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to t('log_in'), new_user_session_path
+            %li= link_to t('sign_up'), new_user_registration_path
     .container
-    - flash.each do |key, value|
-      = content_tag :div, value, class: "flash #{key}"
+      - flash.each do |key, value|
+        = content_tag :div, value, class: "alert"
   .container
     = yield

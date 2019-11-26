@@ -34,4 +34,5 @@ en:
   app_description: A blog where you can share all your favourite recipes.
   add_recipe: Add Recipe
   sign_out: Sign Out
-  sign in: sign In
+  sign_up: Sign Up
+  log_in: Log In
