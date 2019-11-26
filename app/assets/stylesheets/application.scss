@@ -13,3 +13,48 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ $brandCol: #f61567;
+
+ body {
+ 	background: #ffe9df;
+ }
+
+ .navbar {
+   box-shadow: 0px 2px 1px grey;
+   .navbar-brand {
+   	text-transform: uppercase;
+   	font-weight: bold;
+   	font-size: 20px;
+   	a {
+   		color: $brandCol;
+   	}
+   }
+ }
+
+ .recipe {
+ 	background: white;
+ 	border-radius: 25px;
+ 	margin-bottom: 60px;
+ 	img {
+    border-radius: 25px;
+ 		width: 100%;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+ 		&:hover {
+      filter: grayscale(0%);
+      transition: filter 0.5s;
+ 		}
+ 	}
+  h2 {
+ 		padding: 15px 5%;
+    margin: 0;
+ 		font-size: 20px;
+ 		font-weight: normal;
+    text-align: center;
+ 		line-height: 1;
+ 		a {
+ 			color: $brandCol;
+ 		}
+ 	}
+ }
