@@ -74,3 +74,6 @@ gem 'simple_form'
 
 #HAML
 gem 'haml-rails'
+
+#DEVISE
+gem 'devise'

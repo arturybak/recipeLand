@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
+  belongs_to :user
   has_one_attached :image
   validates :title, :description, :image, presence: true
   validate :correct_image_attachment

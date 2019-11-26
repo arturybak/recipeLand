@@ -22,5 +22,8 @@
         %ul.nav.navbar-nav.navbar-right
           %li= link_to t('add_recipe'), new_recipe_path
           %li= link_to t('sign_out'), root_path
+    .container
+    - flash.each do |key, value|
+      = content_tag :div, value, class: "flash #{key}"
   .container
     = yield

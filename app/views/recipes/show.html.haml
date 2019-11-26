@@ -2,6 +2,9 @@
 
 %h1= @recipe.title
 = image_tag(@recipe.image, size: "400x500")
+%p
+  Uploaded by
+  = @recipe.user.email
 
 %p= @recipe.description
 
