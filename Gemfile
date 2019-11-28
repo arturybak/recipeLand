@@ -77,3 +77,6 @@ gem 'haml-rails'
 
 #DEVISE
 gem 'devise'
+
+#COCOON
+gem 'cocoon'
