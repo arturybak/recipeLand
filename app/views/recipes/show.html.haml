@@ -15,7 +15,8 @@
           = link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"
   .col-sm-9
     .recipe
-      %h2= @recipe.title
+      .title
+        %h2= @recipe.title
       %h5
         %span.glyphicon.glyphicon-user
         Uploaded by

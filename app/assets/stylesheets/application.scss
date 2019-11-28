@@ -36,8 +36,11 @@
  	background: white;
  	border-radius: 25px;
  	margin: 5px;
-  padding: 7px;
+  .title {
+    text-transform: uppercase;
+  }
  	img {
+    padding: 5px 5px 0px 5px;
     border-radius: 25px;
  		width: 100%;
     filter: grayscale(100%);
@@ -47,12 +50,11 @@
       transition: filter 0.5s;
  		}
  	}
+
   h2 {
- 		padding: 15px;
     margin: 0;
  		font-size: 20px;
  		font-weight: normal;
- 		line-height: 1;
  		a {
  			color: $brandCol;
  		}
@@ -64,7 +66,11 @@
   }
   p{
     color: grey;
+    padding: 15px;
     text-align: center;
+  }
+  ul{
+    padding-bottom: 20px;
   }
  }
 
