@@ -36,7 +36,7 @@
  	background: white;
  	border-radius: 25px;
  	margin: 5px;
-  text-align: center;
+  padding: 7px;
  	img {
     border-radius: 25px;
  		width: 100%;
@@ -57,22 +57,16 @@
  			color: $brandCol;
  		}
  	}
-  color: $brandCol;
-  h5{
+  h2,h5{
+    color: $brandCol;
     padding: 10px;
+    text-align: center;
   }
   p{
     color: grey;
+    text-align: center;
   }
  }
-
- .alert {
-	padding: 15px;
-	margin-bottom: 20px;
-	border-radius: 10px;
-	background: white;
-	font-weight: bold;
-  }
 
   /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
   .row.content {height: auto}

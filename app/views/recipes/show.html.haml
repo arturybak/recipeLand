@@ -1,8 +1,13 @@
 .row.content
   .col-sm-3.sidenav
     #side
-      = image_tag(@recipe.image, size: "auto")
-      %br
+      .recipe
+        = image_tag(@recipe.image, size: "auto")
+        %br
+        %h2 Ingredients
+        %ul
+          - @recipe.ingredients.each do |ingredient|
+            %li= ingredient.name
       = link_to 'Back', root_path, class: "btn btn-default"
       .btn-group
         -if user_signed_in?
@@ -17,3 +22,8 @@
         = @recipe.user.email
     .recipe
       %p= @recipe.description
+    .recipe
+      %h2 Directions
+      %ul
+        - @recipe.directions.each do |direction|
+          %li= direction.step
