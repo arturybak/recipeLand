@@ -1,13 +1,19 @@
-%h1= @recipe.title
-= image_tag(@recipe.image, size: "400x500")
-%p
-  Uploaded by
-  = @recipe.user.email
-
-%p= @recipe.description
-
-= link_to 'Back', root_path, class: "btn btn-default"
-.btn-group
-  -if user_signed_in?
-    = link_to 'Edit', edit_recipe_path, class: "btn btn-primary"
-    = link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"
+.row.content
+  .col-sm-3.sidenav
+    #side
+      = image_tag(@recipe.image, size: "auto")
+      %br
+      = link_to 'Back', root_path, class: "btn btn-default"
+      .btn-group
+        -if user_signed_in?
+          = link_to 'Edit', edit_recipe_path, class: "btn btn-primary"
+          = link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"
+  .col-sm-9
+    .recipe
+      %h2= @recipe.title
+      %h5
+        %span.glyphicon.glyphicon-user
+        Uploaded by
+        = @recipe.user.email
+    .recipe
+      %p= @recipe.description

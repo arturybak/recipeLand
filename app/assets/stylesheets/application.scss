@@ -35,7 +35,8 @@
  .recipe {
  	background: white;
  	border-radius: 25px;
- 	margin-bottom: 60px;
+ 	margin: 5px;
+  text-align: center;
  	img {
     border-radius: 25px;
  		width: 100%;
@@ -47,16 +48,22 @@
  		}
  	}
   h2 {
- 		padding: 15px 5%;
+ 		padding: 15px;
     margin: 0;
  		font-size: 20px;
  		font-weight: normal;
-    text-align: center;
  		line-height: 1;
  		a {
  			color: $brandCol;
  		}
  	}
+  color: $brandCol;
+  h5{
+    padding: 10px;
+  }
+  p{
+    color: grey;
+  }
  }
 
  .alert {
@@ -66,3 +73,29 @@
 	background: white;
 	font-weight: bold;
   }
+
+  /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+  .row.content {height: auto}
+
+  /* Set gray background color and 100% height */
+  .sidenav {
+    height: 100%;
+  }
+
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height: auto;}
+  }
+
+  #side {
+    border-right: 3px solid $brandCol;
+    padding: 10px 10px 10px 10px;
+    img{
+      display: block;
+      width: 100%;
+    }
+   }

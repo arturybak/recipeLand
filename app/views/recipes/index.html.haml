@@ -1,8 +1,9 @@
-- @recipes.each_slice(4) do |recipesRow|
-  .row
-    - recipesRow.each do |recipe|
-      .col-md-4
-        .recipe
-          = link_to recipe do
-            = image_tag(recipe.image, size: "400x400")
-          %h2= link_to recipe.title, recipe
+.container
+  - @recipes.each_slice(4) do |recipesRow|
+    .row
+      - recipesRow.each do |recipe|
+        .col-md-4
+          .recipe
+            = link_to recipe do
+              = image_tag(recipe.image, size: "400x400")
+            %h2= link_to recipe.title, recipe

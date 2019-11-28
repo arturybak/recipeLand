@@ -29,6 +29,6 @@
             %li= link_to t('sign_up'), new_user_registration_path
     .container
       - flash.each do |key, value|
-        = content_tag :div, value, class: "alert"
-  .container
+        = content_tag :div, value, class: "alert alert-info fade in"
+  
     = yield
