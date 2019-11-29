@@ -35,7 +35,7 @@
  .recipe {
  	background: white;
  	border-radius: 25px;
- 	margin: 5px;
+ 	margin: 2px;
   .title {
     text-transform: uppercase;
   }
@@ -70,7 +70,7 @@
     text-align: center;
   }
   ul{
-    padding-bottom: 20px;
+    margin: 0px 0px 5px 0px;
   }
  }
 
@@ -93,9 +93,15 @@
 
   #side {
     border-right: 3px solid $brandCol;
-    padding: 10px 10px 10px 10px;
+    padding: 5px;
+    margin-right: 5px;
     img{
       display: block;
       width: 100%;
     }
    }
+
+  .form-delete {
+   	float: right;
+    margin: 0px 0px 10px 0px;
+  }

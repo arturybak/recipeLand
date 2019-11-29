@@ -30,5 +30,5 @@
     .container
       - flash.each do |key, value|
         = content_tag :div, value, class: "alert alert-info fade in"
-  
-    = yield
+    .container
+      = yield
