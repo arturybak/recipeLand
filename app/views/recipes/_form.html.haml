@@ -1,4 +1,4 @@
-= simple_form_for @recipe, html: { multipart: true } do |f|
+= simple_form_for @recipe, defaults: { input_html: { class: 'form-control' } } do |f|
 	- if @recipe.errors.any?
 		#error_explanation
 			%h2
@@ -9,9 +9,9 @@
 					.alert.alert-danger
 						%li= message
 	.panel-body
-		= f.input :title, input_html: { class: 'form-control' }
-		= f.input :description, input_html: { class: 'form-control' }
-		= f.input :image, input_html: { class: 'form-control' }
+		= f.input :title
+		= f.input :description
+		= f.input :image
 		.row
 			.col-md-6
 				%h3 Ingredients

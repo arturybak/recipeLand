@@ -21,6 +21,7 @@
 
         - if user_signed_in?
           %ul.nav.navbar-nav.navbar-right
+            %li= link_to "Contact", contact_path
             %li= link_to t('add_recipe'), new_recipe_path
             %li= link_to t('sign_out'), destroy_user_session_path, method: :delete
         - else

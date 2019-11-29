@@ -1,0 +1,7 @@
+%h1 Contact Us
+
+= simple_form_for :contact, :url => request_contact_path, :method => :post do |f|
+  = f.input :name, placeholder: 'Name and Surname', as: :string
+  = f.input :email, as: :email
+  = f.input :message, placeholder: 'Reason for contacting', as: :text
+  = f.button :submit, "Send Form", class: "btn btn-primary"
