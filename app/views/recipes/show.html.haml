@@ -10,7 +10,7 @@
             %li= ingredient.name
       = link_to 'Back', root_path, class: "btn btn-default"
       .btn-group.form-delete
-        -if (current_user.email == @recipe.user.email)
+        -if (user_signed_in? && (current_user.email == @recipe.user.email))
           = link_to 'Edit', edit_recipe_path, class: "btn btn-default"
           = link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"
   .col-sm-9
@@ -28,3 +28,5 @@
       %ul
         - @recipe.directions.each do |direction|
           %li= direction.step
+    .recipe
+      = commontator_thread(@recipe)

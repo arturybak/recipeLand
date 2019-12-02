@@ -15,7 +15,6 @@
             .navbar-text
               %li= "Signed in as #{current_user.email}"
             %li= link_to t('add_recipe'), new_recipe_path
-            .glyphicon.glyphicon-star
             %li= link_to t('sign_out'), destroy_user_session_path, method: :delete
         - else
           %ul.nav.navbar-nav.navbar-right

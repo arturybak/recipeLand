@@ -10,6 +10,8 @@ class Recipe < ApplicationRecord
   validates :title, :description, :image, presence: true
   validate :correct_image_attachment
 
+  acts_as_commontable dependent: :destroy
+
   private
   def correct_image_attachment
     if !image.attached?
