@@ -2,7 +2,7 @@
   .col-sm-3.sidenav
     #side
       .recipe
-        = image_tag(@recipe.image, size: "auto")
+        = image_tag(@recipe.image, size: "auto") if @recipe.image.attached?
         %br
         %h2 Ingredients
         %ul

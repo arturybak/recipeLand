@@ -5,3 +5,6 @@
   = f.input :email, as: :email
   = f.input :message, placeholder: 'Reason for contacting', as: :text
   = f.button :submit, "Send Form", class: "btn btn-primary"
+
+%br
+= link_to 'Back', root_path, class:"btn btn-default"

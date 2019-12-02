@@ -1,8 +1,13 @@
 require 'test_helper'
 
 class RecipesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    @user = users(:one)
+    sign_in @user
     @recipe = recipes(:one)
+    @recipe.image.attach(io: File.open('app/assets/images/brownies.jpg'), filename: 'brownies.jpg', content_type: 'image/jpg')
   end
 
   test "should get index" do
