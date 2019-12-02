@@ -2,7 +2,10 @@
 
 = simple_form_for :contact, :url => request_contact_path, :method => :post do |f|
   = f.input :name, placeholder: 'Name and Surname', as: :string
-  = f.input :email, as: :email
+  - if !user_signed_in?
+    = f.input :email, as: :email
+  - else
+    = f.hidden_field :email, :value => current_user.email
   = f.input :message, placeholder: 'Reason for contacting', as: :text
   = f.button :submit, "Send Form", class: "btn btn-primary"
 

@@ -15,30 +15,11 @@
     = csrf_meta_tags
 
   %body
-    %nav.navbar.navbar-default
-      .container
-        .navbar-header
-          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          .navbar-brand= link_to "Recipe Land", root_path
+    = render 'shared/header'
 
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          - if user_signed_in?
-            %ul.nav.navbar-nav.navbar-right
-              .navbar-text
-                %li= "Signed in as #{current_user.email}"
-              %li= link_to "Contact", contact_path
-              %li= link_to t('add_recipe'), new_recipe_path
-              %li= link_to t('sign_out'), destroy_user_session_path, method: :delete
-          - else
-            %ul.nav.navbar-nav.navbar-right
-              %li= link_to t('log_in'), new_user_session_path
-              %li= link_to t('sign_up'), new_user_registration_path
-    .container
+    .container#content
       - flash.each do |key, value|
         = content_tag :div, value, class: "alert alert-info fade in"
-    .container
       = yield
+
+    = render 'shared/footer'

@@ -1,4 +1,7 @@
-class ContactController < ApplicationController
+class HomeController < ApplicationController
+  def home
+  end
+
   def contact
   end
 
@@ -15,4 +18,5 @@ class ContactController < ApplicationController
     end
     redirect_to root_path
   end
+
 end
