@@ -1,0 +1,7 @@
+- @results.each do |recipe|
+  .col-md-4
+    .recipe
+      = link_to recipe do
+        = image_tag(recipe.image, size: "400x400") if recipe.image.attached?
+      .title
+        %h2= link_to recipe.title, recipe

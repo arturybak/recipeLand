@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   mount Commontator::Engine => '/commontator'
 
+  get '/search' => 'home#search', :as => 'search_page'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
