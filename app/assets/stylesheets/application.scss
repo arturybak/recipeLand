@@ -78,6 +78,11 @@
   }
  }
 
+  .recipe.jumbotron {
+    text-align: center;
+    color: $brandCol;
+  }
+
   /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
   .row.content {height: auto}
 
@@ -108,4 +113,30 @@
   .form-delete {
    	float: right;
     margin: 0px 0px 10px 0px;
+  }
+
+  .logo {
+    font-size: 200px;
+    color: $brandCol;
+  }
+
+  #about {
+    padding: 50px 50px;
+    text-align: center;
+    h2 {
+      text-transform: lowercase;
+      color: $brandCol;
+    }
+    p {
+      padding: 10px;
+      color: $brandCol;
+      font-weight: bold;
+    }
+  }
+
+  .colored {
+    background-color: $brandCol;
+    &:hover {
+      background-color: #D8125A;
+    }
   }

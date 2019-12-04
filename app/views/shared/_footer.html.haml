@@ -3,6 +3,6 @@
     .container
       %p.navbar-text.pull-left
         != "&copy; Artur Rybka #{Time.now.year}"
-      %a.navbar-btn.btn-danger.btn.pull-right{:href => "/contact"}
-        %span.glyphicon.glyphicon-envelope
-        Get in touch
+      = link_to contact_path, class: "navbar-btn btn-danger btn pull-right colored" do
+        Get in touch!
+        %i.glyphicon.glyphicon-envelope
