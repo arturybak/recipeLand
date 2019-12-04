@@ -9,7 +9,6 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *= require commontator/application
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
@@ -54,7 +53,12 @@
       transition: filter 0.5s;
  		}
  	}
-
+  h1 {
+    padding-top: 20px;
+    text-transform: lowercase;
+    color: $brandCol;
+    text-align: center;
+  }
   h2 {
     margin: 0;
  		font-size: 20px;
@@ -139,4 +143,17 @@
     &:hover {
       background-color: #D8125A;
     }
+  }
+
+  .form-inputs {
+    margin: auto;
+    width: 65%;
+    border-top: 2px solid $brandCol;
+    border-bottom: 2px solid $brandCol;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .links {
+    text-align: center;
   }

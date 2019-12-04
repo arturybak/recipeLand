@@ -80,6 +80,3 @@ gem 'devise'
 
 #COCOON
 gem 'cocoon'
-
-#COMMONTATOR
-gem 'commontator'

@@ -1,4 +1,4 @@
-= simple_form_for @recipe, defaults: { input_html: { class: 'form-control' } } do |f|
+= simple_form_for @recipe do |f|
 	- if @recipe.errors.any?
 		#error_explanation
 			%h2
@@ -9,22 +9,23 @@
 					.alert.alert-danger
 						%li= message
 	.panel-body
-		= f.input :title
-		= f.input :description
-		= f.input :image
-		.row
-			.col-md-6
-				%h3 Ingredients
-				#ingredients
-					= f.simple_fields_for :ingredients do |ingredient|
-						= render 'ingredient_fields', f: ingredient
-					.links
-						= link_to_add_association 'Add Ingredient', f, :ingredients, class: 'btn btn-success'
-			.col-md-6
-				%h3 Directions
-				#directions
-					= f.simple_fields_for :directions do |direction|
-						= render 'direction_fields', f: direction
-					.links
-						= link_to_add_association 'Add Direction', f, :directions, class: 'btn btn-success'
-	= f.button :submit, class: "btn btn-primary"
+		.form-inputs
+			= f.input :title
+			= f.input :description
+			= f.input :image
+			.row
+				.col-md-6
+					%h2 ingredients
+					#ingredients
+						= f.simple_fields_for :ingredients do |ingredient|
+							= render 'ingredient_fields', f: ingredient
+						.links
+							= link_to_add_association 'Add Ingredient', f, :ingredients, class: 'btn btn-default'
+				.col-md-6
+					%h2 directions
+					#directions
+						= f.simple_fields_for :directions do |direction|
+							= render 'direction_fields', f: direction
+						.links
+							= link_to_add_association 'Add Direction', f, :directions, class: 'btn btn-default'
+	= f.button :submit, class: "btn btn-danger center-block colored"

@@ -1,8 +1,9 @@
 .container
-  %h1 New Recipe
+  .recipe
+    %h1 New Recipe
 
-  = render 'form', recipe: @recipe
+    = render 'form', recipe: @recipe
 
-  %br/
+    %br/
 
-  = link_to 'Back', root_path, class:"btn btn-default"
+    = link_to 'Back', root_path, class:"btn btn-default center-block"
