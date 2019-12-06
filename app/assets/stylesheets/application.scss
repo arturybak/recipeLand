@@ -21,6 +21,7 @@
 
   #content {
     padding-top: 70px;
+    padding-bottom:70px;
   }
 
  .navbar {
@@ -39,6 +40,7 @@
  	background: white;
  	border-radius: 25px;
  	margin: 2px;
+  text-align: center;
   .title {
     text-transform: uppercase;
   }
@@ -57,7 +59,6 @@
     padding-top: 20px;
     text-transform: lowercase;
     color: $brandCol;
-    text-align: center;
   }
   h2 {
     margin: 0;
@@ -70,12 +71,10 @@
   h2,h5{
     color: $brandCol;
     padding: 10px;
-    text-align: center;
   }
   p{
     color: grey;
     padding: 15px;
-    text-align: center;
   }
   ul{
     margin: 0px 0px 5px 0px;
@@ -83,14 +82,12 @@
  }
 
   .recipe.jumbotron {
-    text-align: center;
     color: $brandCol;
   }
 
-  /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+  /* Set height of the grid so .sidenav can be 100% */
   .row.content {height: auto}
 
-  /* Set gray background color and 100% height */
   .sidenav {
     height: 100%;
   }
@@ -156,4 +153,15 @@
 
   .links {
     text-align: center;
+  }
+
+  #ingredients, #directions {
+  	ul, ol {
+  		padding-left: 7%;
+      padding-right: 7%;
+  		li {
+        padding: 2.5%;
+  			border-bottom: 1px solid gainsboro;
+  		}
+  	}
   }

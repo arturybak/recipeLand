@@ -35,21 +35,77 @@ en:
   sign_out: Sign Out
   sign_up: Sign Up
   log_in: Log In
+  go_back: Back
+  add_recipe: Add Recipe
+  edit_recipe: Edit Recipe
+  ingredients: ingredients
+  directions: directions
+  search: Search
+  search_results: search results
+  signed_in: "Signed in as "
 
-  recipes:
-    add_recipe: Add Recipe
+  helpers:
+    submit:
+      recipe:
+        create: Create Recipe
+      user:
+        create: Sign Up
 
-  contact:
-    name: "Name:"
-    enter_name: Enter your name
-    email: "Email:"
-    enter_email: Enter your email address
-    telephone: "Telephone:"
-    enter_telephone: Enter your telephone number
-    message: "Message:"
-    enter_message: What do you want to say?
-    submit: Contact Us
+  home:
+    home:
+      see_recipes: See Recipes
+      about_me: About Me
+      about_me_p: I am in love with cooking and always wanted to enable others to share their passion too!
+      share_it: Share it with the world!
+      share_it_p: Whether it's your great-great-great-grandmother's recipe or you're just feeling creative, let others see it!
+      show_love: Show some love!
+      show_love_p: Add likes to your favourite recipes!
+      sounds_good: Sounds good?
+      sounds_good_p: What are you waiting for? Lets get cooking!
+    contact:
+      contact_us: Contact Us
+      enter_name: Enter your full name
+      enter_message: What do you want to say?
 
     request_contact:
       no_email: You must provide an email address
       email_sent: Thank you. We will be in touch shortly
+
+  contact_mailer:
+    contact_email:
+      heading: 'Dear '
+      content: Could you get in touch with me please?
+      name: Name
+      email: Email
+      thanks: Thanks,
+
+  cocoon:
+    defaults:
+      add: Add
+      remove: Remove
+    ingredients:
+      add: Add Ingredient
+    directions:
+      add: Add Step
+
+  devise:
+    shared:
+      links:
+        forgot: Forgot your password?
+        confirmation: Didn't receive confirmation instructions?
+        unlock: Didn't receive unlock instructions?
+
+  simple_form:
+    labels:
+      contact:
+        name: Name
+        email: Email
+        message: Message
+      recipe:
+        title: Title
+        description: Description
+        image: Image
+      user:
+        password: Password
+        password_confirmation: Password confirmation
+        remember_me: Remember me

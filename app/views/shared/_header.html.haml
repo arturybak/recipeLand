@@ -4,22 +4,20 @@
       .navbar-header
         %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
           %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        .navbar-brand= link_to "Recipe Land", root_path
+          %span.glyphicon.glyphicon-menu-hamburger
+        .navbar-brand= link_to t('app_title'), root_path
 
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         .navbar-form.navbar-right
           = form_tag(search_page_path, :method => "get") do
             .input-group
-              = search_field_tag :search, params[:search], placeholder: "Search", class: "form-control"
+              = search_field_tag :search, params[:search], placeholder: t('search'), class: "form-control"
               .input-group-btn
-                = button_tag "", :class => 'btn btn-default glyphicon glyphicon-search',:name => nil
+                = button_tag "", :class => 'btn btn-default glyphicon glyphicon-search'
         %ul.nav.navbar-nav.navbar-right
           - if user_signed_in?
             .navbar-text
-              %li= "Signed in as #{current_user.email}"
+              %li= t('signed_in') + "#{current_user.email}"
             %li= link_to t('add_recipe'), new_recipe_path
             %li= link_to t('sign_out'), destroy_user_session_path, method: :delete
           - else

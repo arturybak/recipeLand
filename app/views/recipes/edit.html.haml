@@ -1,3 +1,9 @@
-%h1 Edit Recipe
+.container
+  .recipe
+    %h1= t('edit_recipe')
 
-= render 'form', recipe: @recipe
+    = render 'form', recipe: @recipe
+
+    %br/
+
+    = link_to 'Back', root_path, class:"btn btn-default center-block"

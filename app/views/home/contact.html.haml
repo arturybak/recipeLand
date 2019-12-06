@@ -1,14 +1,13 @@
-%h1
-  Contact Us
+.recipe
+  %h1= t('.contact_us')
 
-= simple_form_for :contact, :url => request_contact_path, :method => :post do |f|
-  = f.input :name, placeholder: 'Name and Surname', as: :string
-  - if !user_signed_in?
-    = f.input :email, as: :email
-  - else
-    = f.hidden_field :email, :value => current_user.email
-  = f.input :message, placeholder: 'Reason for contacting', as: :text
-  = f.button :submit, "Send Form", class: "btn btn-primary"
-
-%br
-= link_to 'Back', root_path, class:"btn btn-default"
+  = simple_form_for :contact, :url => request_contact_path, :method => :post do |f|
+    .form-inputs
+      = f.input :name, placeholder: t('.enter_name'), as: :string
+      - if !user_signed_in?
+        = f.input :email, as: :email
+      - else
+        = f.hidden_field :email, :value => current_user.email
+      = f.input :message, placeholder: t('.enter_message'), as: :text
+    = f.button :submit, t('.contact_us'), class: "btn btn-default btn-block"
+  = link_to t('go_back'), root_path, class:"btn btn-default btn-block"

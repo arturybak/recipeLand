@@ -2,21 +2,19 @@
   %h1 Welcome to Recipe Land!
   %p
     This is a website for sharing all your favourite recipes!
-  = link_to "See Recipes", recipes_path, class: "btn-danger btn-lg colored"
+  = link_to t('.see_recipes'), recipes_path, class: "btn-danger btn-lg colored"
 #about
   .row
     .col-sm-4
       %span.glyphicon.glyphicon-user.logo
     .col-sm-8
-      %h2 About Me
-      %p.recipe
-        I am in love with cooking and always wanted to enable others to share their passion too!
+      %h2= t('.about_me')
+      %p.recipe= t('.about_me_p')
 #about
   .row
     .col-sm-8
-      %h2 Share it with the world!
-      %p.recipe
-        Whether it's your great-great-great-grandmother's recipe or you're jsut feeling creative, let others see it!
+      %h2= t('.share_it')
+      %p.recipe= t('.share_it_p')
     .col-sm-4
       %span.glyphicon.glyphicon-globe.logo
 #about
@@ -24,14 +22,12 @@
     .col-sm-4
       %span.glyphicon.glyphicon-heart.logo
     .col-sm-8
-      %h2 Show some love!
-      %p.recipe
-        Add likes to your favourite recipes!
+      %h2= t('.show_love')
+      %p.recipe= t('.show_love_p')
 #about
   .row
     .col-sm-8
-      %h2 Sounds good?
-      %p.recipe
-        What are you waiting for? Lets get cooking!
+      %h2= t('.sounds_good')
+      %p.recipe= t('.sounds_good_p')
     .col-sm-4
       %span.glyphicon.glyphicon-cutlery.logo

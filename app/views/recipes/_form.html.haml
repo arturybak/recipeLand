@@ -14,18 +14,18 @@
 			= f.input :description
 			= f.input :image
 			.row
-				.col-md-6
-					%h2 ingredients
+				.col-sm-6
+					%h2= t('ingredients')
 					#ingredients
 						= f.simple_fields_for :ingredients do |ingredient|
 							= render 'ingredient_fields', f: ingredient
 						.links
-							= link_to_add_association 'Add Ingredient', f, :ingredients, class: 'btn btn-default'
-				.col-md-6
-					%h2 directions
+							= link_to_add_association f, :ingredients, class: 'btn btn-default'
+				.col-sm-6
+					%h2= t('directions')
 					#directions
 						= f.simple_fields_for :directions do |direction|
 							= render 'direction_fields', f: direction
 						.links
-							= link_to_add_association 'Add Direction', f, :directions, class: 'btn btn-default'
+							= link_to_add_association f, :directions, class: 'btn btn-default'
 	= f.button :submit, class: "btn btn-danger center-block colored"

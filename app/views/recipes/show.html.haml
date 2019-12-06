@@ -1,19 +1,21 @@
 .row.content
-  .col-sm-3.sidenav
+  .col-sm-4.sidenav
     #side
       .recipe
         = image_tag(@recipe.image, size: "auto") if @recipe.image.attached?
         %br
         %h2 Ingredients
-        %ul
-          - @recipe.ingredients.each do |ingredient|
-            %li= ingredient.name
+        #ingredients
+          %ul{:style => "list-style-type:none;"}
+            - @recipe.ingredients.each do |ingredient|
+              %li= ingredient.name
+      %br
       = link_to 'Back', root_path, class: "btn btn-default"
       .btn-group.form-delete
         -if (user_signed_in? && (current_user.email == @recipe.user.email))
           = link_to 'Edit', edit_recipe_path, class: "btn btn-default"
           = link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"
-  .col-sm-9
+  .col-sm-8
     .recipe
       .title
         %h2= @recipe.title
@@ -25,6 +27,7 @@
       %p= @recipe.description
     .recipe
       %h2 Directions
-      %ul
-        - @recipe.directions.each do |direction|
-          %li= direction.step
+      #directions
+        %ol
+          - @recipe.directions.each do |direction|
+            %li= direction.step
