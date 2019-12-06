@@ -31,3 +31,14 @@
         %ol
           - @recipe.directions.each do |direction|
             %li= direction.step
+    .parent_likes
+      .like_count
+        = @recipe.get_likes.size
+        &#128591
+      %a
+        -if current_user.liked? @recipe
+          = link_to like_recipe_path(@recipe,'unlike'), class: "preached-btn",method: :put, remote: :true do
+            Preached
+        - else
+          = link_to like_recipe_path(@recipe,'like'), class: "preach-btn",method: :put, remote: :true do
+            Preach

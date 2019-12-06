@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :recipes
+  resources :recipes do
+    member do
+      put "like" => "recipes#like"
+    end
+  end
 
   get 'contact', to: 'home#contact'
   post 'request_contact', to: 'home#request_contact'

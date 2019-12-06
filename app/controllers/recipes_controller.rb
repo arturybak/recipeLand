@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
+
   # GET /recipes
   # GET /recipes.json
   def index
@@ -60,6 +61,15 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def like
+    @recipe = Recipe.find(params[:id])
+    if params[:format] == 'like'
+      @recipe.liked_by current_user
+    elsif params[:format] == 'unlike'
+      @recipe.unliked_by current_user
     end
   end
 

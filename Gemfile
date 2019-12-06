@@ -80,3 +80,6 @@ gem 'devise'
 
 #COCOON
 gem 'cocoon'
+
+#LIKING
+gem 'acts_as_votable'
