@@ -69,16 +69,16 @@ gem 'sassc-rails', '>= 2.1.0'
 
 gem 'jquery-rails'
 
-#SIMPLEFORM
+#BETTER FORMS
 gem 'simple_form'
 
 #HAML
 gem 'haml-rails'
 
-#DEVISE
+#USER AUTHENTICATION
 gem 'devise'
 
-#COCOON
+#NESTED FORMS
 gem 'cocoon'
 
 #LIKING

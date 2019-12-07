@@ -37,6 +37,21 @@
    }
  }
 
+ @media (max-width: 1000px) {
+   .navbar-header {
+       float: none;
+   }
+   .navbar-left,.navbar-right {
+       float: none;
+   }
+   .navbar-toggle {
+       display: block;
+   }
+   .navbar-collapse.collapse {
+       display: none !important;
+   }
+}
+
  .recipe {
  	background: white;
  	border-radius: 25px;
@@ -44,6 +59,9 @@
   text-align: center;
   .title {
     text-transform: uppercase;
+    display: table;
+    margin: auto;
+    border-bottom: 2px solid $brandCol;
   }
  	img {
     padding: 5px 5px 0px 5px;
@@ -165,4 +183,8 @@
   			border-bottom: 1px solid gainsboro;
   		}
   	}
+  }
+
+  .liked-btn, .like-btn {
+    text-align: center;
   }

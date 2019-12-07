@@ -33,12 +33,15 @@
             %li= direction.step
     .parent_likes
       .like_count
-        = @recipe.get_likes.size
-        &#128591
-      %a
-        -if current_user.liked? @recipe
-          = link_to like_recipe_path(@recipe,'unlike'), class: "preached-btn",method: :put, remote: :true do
-            Preached
-        - else
-          = link_to like_recipe_path(@recipe,'like'), class: "preach-btn",method: :put, remote: :true do
-            Preach
+      - if user_signed_in?
+        %a
+          -if current_user.liked? @recipe
+            = link_to like_recipe_path(@recipe,'unlike'), class: "btn-danger btn-lg center-block liked-btn",method: :put, remote: :true do
+              Hearted!
+              %i.glyphicon.glyphicon-heart
+              = @recipe.get_likes.size
+          - else
+            = link_to like_recipe_path(@recipe,'like'), class: "btn-danger btn-lg center-block like-btn",method: :put, remote: :true do
+              Show me love!
+              %i.glyphicon.glyphicon-heart
+              = @recipe.get_likes.size
