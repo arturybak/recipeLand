@@ -6,4 +6,4 @@ one:
 
 two:
   step: MyText
-  recipe: two
+  recipe: one

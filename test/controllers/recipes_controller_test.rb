@@ -7,7 +7,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
     sign_in @user
     @recipe = recipes(:one)
-    @recipe.image.attach(io: File.open('app/assets/images/rainbow-pie.jpg'), filename: 'rainbow-pie.jpg', content_type: 'image/jpg')
+    @recipe_image = fixture_file_upload('app/assets/images/vegan-chilli.jpg', 'image/jpg')
   end
 
   test "should get index" do
@@ -22,9 +22,15 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create recipe" do
     assert_difference('Recipe.count') do
-      post recipes_url, params: { recipe: { description: @recipe.description, title: @recipe.title, user_id: @recipe.user_id } }
+      post recipes_url, params: {
+        recipe: {
+          description: @recipe.description, title: @recipe.title, user_id: @recipe.user_id,
+          image: @recipe_image,
+          ingredients_attributes: [ingredients(:one)],
+          directions_attributes: [directions(:one)]
+          }
+        }
     end
-
     assert_redirected_to recipe_url(Recipe.last)
   end
 
@@ -40,7 +46,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update recipe" do
     patch recipe_url(@recipe), params: { recipe: { description: @recipe.description, title: @recipe.title, user_id: @recipe.user_id } }
-    assert_redirected_to recipe_url(@recipe)
+    assert_response :success
   end
 
   test "should destroy recipe" do

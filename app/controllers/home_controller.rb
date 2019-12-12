@@ -20,10 +20,10 @@ class HomeController < ApplicationController
     message = params[:contact][:message]
 
     if email.blank?
-      flash[:alert] = I18n.t('contact.request_contact.no_email')
+      flash[:alert] = t('.no_email')
     else
       ContactMailer.contact_email(email, name, message).deliver_now
-      flash[:notice] = I18n.t('contact.request_contact.email_sent')
+      flash[:notice] = t('.email_sent')
     end
     redirect_to root_path
   end

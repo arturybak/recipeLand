@@ -1,6 +1,6 @@
 class Recipe < ApplicationRecord
-  has_many :ingredients, inverse_of: :recipe
-  has_many :directions, inverse_of: :recipe
+  has_many :ingredients, inverse_of: :recipe, :dependent => :delete_all
+  has_many :directions, inverse_of: :recipe, :dependent => :delete_all
 
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :directions, reject_if: :all_blank, allow_destroy: true
