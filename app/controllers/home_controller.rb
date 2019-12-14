@@ -6,10 +6,13 @@ class HomeController < ApplicationController
   end
 
   def search
+    #Redirect to homepage if the field is empty
     if params[:search].blank?
-      redirect_to(root_path, alert: "Empty search") and return
+      redirect_to(root_path, alert: "Invalid Search") and return
     else
+      #Convert the input string to lowercase characters
       @parameter = params[:search].downcase
+      #Trying to find recipes which title contains the input string
       @results = Recipe.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")
     end
   end

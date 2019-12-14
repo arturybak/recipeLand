@@ -19,7 +19,6 @@
  body {
  	background: #ffe9df;
  }
-
   #content {
     padding-top: 70px;
     padding-bottom:70px;
@@ -60,6 +59,7 @@
  	border-radius: 25px;
  	margin: 2px;
   text-align: center;
+  color: $brandCol;
   .title {
     text-transform: uppercase;
     display: table;
@@ -80,47 +80,39 @@
   h1 {
     padding-top: 20px;
     text-transform: lowercase;
-    color: $brandCol;
   }
   h2 {
     margin: 0;
  		font-size: 20px;
  		font-weight: normal;
- 		a {
- 			color: $brandCol;
- 		}
  	}
-  h2,h5{
-    color: $brandCol;
+  h2,h5 {
     padding: 10px;
   }
-  p{
+  p {
     color: grey;
     padding: 15px;
   }
-  ul{
+  a {
+    color: $brandCol;
+  }
+  ul,ol {
+    color: #404040	;
     margin: 0px 0px 5px 0px;
   }
  }
 
-  .recipe.jumbotron {
-    color: $brandCol;
+  #show-image {
+    img {
+      filter: grayscale(0%) !important;
+    }
   }
 
-  /* Set height of the grid so .sidenav can be 100% */
-  .row.content {height: auto}
-
-  .sidenav {
-    height: 100%;
-  }
-
-  /* On small screens, set height to 'auto' for sidenav and grid */
   @media screen and (max-width: 767px) {
     .sidenav {
       height: auto;
       padding: 15px;
     }
-    .row.content {height: auto;}
   }
 
   #side {
@@ -133,7 +125,7 @@
     }
    }
 
-  .form-delete {
+  .logged-in-buttons {
    	float: right;
     margin: 0px 0px 10px 0px;
   }
@@ -159,6 +151,7 @@
 
   .colored {
     background-color: $brandCol;
+    color: white !important;
     &:hover {
       background-color: #D8125A;
     }

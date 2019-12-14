@@ -2,16 +2,17 @@
   .col-sm-4.sidenav
     #side
       .recipe
-        = image_tag(@recipe.image, size: "auto") if @recipe.image.attached?
+        #show-image
+          = image_tag(@recipe.image, size: "auto") if @recipe.image.attached?
         %br
         %h2 Ingredients
         #ingredients
+          //Not showing hyphons for list elements
           %ul{:style => "list-style-type:none;"}
             - @recipe.ingredients.each do |ingredient|
               %li= ingredient.name
-      %br
       = link_to 'Back', root_path, class: "btn btn-default"
-      .btn-group.form-delete
+      .btn-group.logged-in-buttons
         -if (user_signed_in? && (current_user.email == @recipe.user.email))
           = link_to 'Edit', edit_recipe_path, class: "btn btn-default"
           = link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"

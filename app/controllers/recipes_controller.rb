@@ -1,6 +1,4 @@
 class RecipesController < ApplicationController
-  respond_to :js, :html, :json
-
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
@@ -66,7 +64,9 @@ class RecipesController < ApplicationController
   end
 
   def like
+    #Finding the recipe by its id
     @recipe = Recipe.find(params[:id])
+    #Liking or unliking the recipe
     if params[:format] == 'like'
       @recipe.liked_by current_user
     elsif params[:format] == 'unlike'

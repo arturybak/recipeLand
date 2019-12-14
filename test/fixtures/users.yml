@@ -6,9 +6,5 @@
 #
 one:
   id: 4
-  email: czikulin@gmail.com
-  encrypted_password: wyluzuj
-# column: value
-#
-two: {}
-# column: value
+  email: abc@gmail.com
+  encrypted_password: abcdef

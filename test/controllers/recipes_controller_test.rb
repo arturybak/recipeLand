@@ -26,8 +26,8 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
         recipe: {
           description: @recipe.description, title: @recipe.title, user_id: @recipe.user_id,
           image: @recipe_image,
-          ingredients_attributes: [ingredients(:one)],
-          directions_attributes: [directions(:one)]
+          ingredients_attributes: [ingredients(:one), ingredients(:two)],
+          directions_attributes: [directions(:one), directions(:two)]
           }
         }
     end
@@ -42,6 +42,19 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_recipe_url(@recipe)
     assert_response :success
+  end
+
+  test "should like and unlike recipe" do
+    assert_difference('Recipe.find(8).get_likes.size', +1) do
+      put like_recipe_url(@recipe), params: {
+        format: 'like', id: 8
+        }
+    end
+    assert_difference('Recipe.find(8).get_likes.size', -1) do
+      put like_recipe_url(@recipe), params: {
+        format: 'unlike', id: 8
+        }
+    end
   end
 
   test "should update recipe" do

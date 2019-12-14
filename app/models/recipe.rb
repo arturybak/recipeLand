@@ -14,7 +14,7 @@ class Recipe < ApplicationRecord
 
   private
   def correct_image_attachment
-    if !image.attached?
+    if !image.attached? #chech if file attached
       errors.add(:image, 'required')
     elsif !image.image?
       image.purge #delete uploaded file

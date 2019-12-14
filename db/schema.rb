@@ -34,25 +34,25 @@ ActiveRecord::Schema.define(version: 2019_12_06_173133) do
   end
 
   create_table "directions", force: :cascade do |t|
-    t.text "step"
-    t.integer "recipe_id"
+    t.text "step", null: false
+    t.integer "recipe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_directions_on_recipe_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.integer "recipe_id"
+    t.string "name", null: false
+    t.integer "recipe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.integer "user_id"
+    t.string "title", null: false
+    t.text "description", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cached_votes_total", default: 0
