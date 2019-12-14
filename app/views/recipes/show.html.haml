@@ -1,7 +1,7 @@
 .row.content
   .col-sm-4.sidenav
     #side
-      .recipe
+      .squircle
         #show-image
           = image_tag(@recipe.image, size: "auto") if @recipe.image.attached?
         %br
@@ -17,16 +17,16 @@
           = link_to 'Edit', edit_recipe_path, class: "btn btn-default"
           = link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"
   .col-sm-8
-    .recipe
+    .squircle
       .title
         %h2= @recipe.title
       %h5
         %span.glyphicon.glyphicon-user
         Uploaded by
         = @recipe.user.email
-    .recipe
+    .squircle
       %p= @recipe.description
-    .recipe
+    .squircle
       %h2 Directions
       #directions
         %ol

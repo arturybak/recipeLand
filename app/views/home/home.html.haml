@@ -1,33 +1,33 @@
-.recipe.jumbotron
+.squircle.jumbotron
   %h1 Welcome to Recipe Land!
   %p
     This is a website for sharing all your favourite recipes!
   = link_to t('.see_recipes'), recipes_path, class: "btn-danger btn-lg colored"
-#about
+.about
   .row
     .col-sm-4
       %span.glyphicon.glyphicon-user.logo
     .col-sm-8
       %h2= t('.about_me')
-      %p.recipe= t('.about_me_p')
-#about
+      %p.squircle= t('.about_me_p')
+.about
   .row
     .col-sm-8
       %h2= t('.share_it')
-      %p.recipe= t('.share_it_p')
+      %p.squircle= t('.share_it_p')
     .col-sm-4
       %span.glyphicon.glyphicon-globe.logo
-#about
+.about
   .row
     .col-sm-4
       %span.glyphicon.glyphicon-heart.logo
     .col-sm-8
       %h2= t('.show_love')
-      %p.recipe= t('.show_love_p')
-#about
+      %p.squircle= t('.show_love_p')
+.about
   .row
     .col-sm-8
       %h2= t('.sounds_good')
-      %p.recipe= t('.sounds_good_p')
+      %p.squircle= t('.sounds_good_p')
     .col-sm-4
       %span.glyphicon.glyphicon-cutlery.logo

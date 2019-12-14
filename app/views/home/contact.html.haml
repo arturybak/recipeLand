@@ -1,9 +1,10 @@
-.recipe
+.squircle
   %h1= t('.contact_us')
-
+  //Generate contact Form
   = simple_form_for :contact, :url => request_contact_path, :method => :post do |f|
     .form-inputs
       = f.input :name, placeholder: t('.enter_name'), as: :string
+      //If user is signed in, use their user email as the email and dont display the form
       - if !user_signed_in?
         = f.input :email, as: :email
       - else

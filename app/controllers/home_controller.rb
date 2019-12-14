@@ -18,17 +18,21 @@ class HomeController < ApplicationController
   end
 
   def request_contact
+    #Retrieve data from form
     name = params[:contact][:name]
     email = params[:contact][:email]
     message = params[:contact][:message]
 
-    if email.blank?
-      flash[:alert] = t('.no_email')
+    #Check if all fields provided
+    if email.blank? || name.blank? || message.blank?
+      #If not display an error message and refresh the page
+      redirect_to request.referrer, :alert => t('.not_enough_info')
     else
+      #If all fields provided, send the message
       ContactMailer.contact_email(email, name, message).deliver_now
-      flash[:notice] = t('.email_sent')
+      #Inform the user of successful operation and redirect to homepage
+      redirect_to root_path, :notice => t('.email_sent')
     end
-    redirect_to root_path
   end
 
 end

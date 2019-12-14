@@ -1,9 +1,8 @@
+//Run the function if ajax request succesful
 $('.liked-btn').on('ajax:success', function(){
-  $(this).parent().parent().find('.like_count')
   $(this).closest('.liked-btn').html('Disliked :( <i class="glyphicon glyphicon-heart"></i> <%= @recipe.get_likes.size %>');
 });
 
 $('.like-btn').on('ajax:success', function(){
-  $(this).parent().parent().find('.like_count')
   $(this).closest('.like-btn').html('Hearted! <i class="glyphicon glyphicon-heart"></i> <%= @recipe.get_likes.size %>');
 });

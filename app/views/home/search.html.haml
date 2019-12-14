@@ -1,8 +1,8 @@
-.recipe.jumbotron
-  %h2= t('search_results')
+.squircle.jumbotron
+  %h1= t('search_results')
 - @results.each do |recipe|
   .col-md-4
-    .recipe
+    .squircle
       = link_to recipe do
         = image_tag(recipe.image, size: "400x400") if recipe.image.attached?
       .title

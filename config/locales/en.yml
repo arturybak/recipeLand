@@ -68,9 +68,16 @@ en:
       enter_message: What do you want to say?
 
     request_contact:
-      no_email: You must provide an email address
+      not_enough_info: You must provide an email address, name and message
       email_sent: Thank you. We will be in touch shortly
 
+  recipes:
+    create:
+      created: Recipe was successfully created
+    update:
+      updated: Recipe was successfully updated
+    destroy:
+      destroyed: Recipe was successfully destroyed
   contact_mailer:
     contact_email:
       heading: 'Dear '

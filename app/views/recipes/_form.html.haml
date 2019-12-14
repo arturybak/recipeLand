@@ -1,3 +1,4 @@
+//Form written according to instrucions of cocoon gem setup
 = simple_form_for @recipe do |f|
 	- if @recipe.errors.any?
 		#error_explanation
@@ -8,24 +9,24 @@
 				- @recipe.errors.full_messages.each do |message|
 					.alert.alert-danger
 						%li= message
-	.panel-body
-		.form-inputs
-			= f.input :title
-			= f.input :description
-			= f.input :image
-			.row
-				.col-sm-6
-					%h2= t('ingredients')
-					#ingredients
-						= f.simple_fields_for :ingredients do |ingredient|
-							= render 'ingredient_fields', f: ingredient
-						.links
-							= link_to_add_association f, :ingredients, class: 'btn btn-default'
-				.col-sm-6
-					%h2= t('directions')
-					#directions
-						= f.simple_fields_for :directions do |direction|
-							= render 'direction_fields', f: direction
-						.links
-							= link_to_add_association f, :directions, class: 'btn btn-default'
+	.form-inputs
+		= f.input :title
+		= f.input :description
+		= f.input :image
+		.row
+			.col-sm-6
+				%h2= t('ingredients')
+				#ingredients
+					= f.simple_fields_for :ingredients do |ingredient|
+						= render 'ingredient_fields', f: ingredient
+					.links
+						= link_to_add_association f, :ingredients, class: 'btn btn-default'
+			.col-sm-6
+				%h2= t('directions')
+				#directions
+					= f.simple_fields_for :directions do |direction|
+						= render 'direction_fields', f: direction
+					.links
+						= link_to_add_association f, :directions, class: 'btn btn-default'
+	%br
 	= f.button :submit, class: "btn btn-danger center-block colored"

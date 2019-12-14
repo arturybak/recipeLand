@@ -26,11 +26,12 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    #Assign logged in user to the recipe being created
     @recipe.user = current_user
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
+        format.html { redirect_to @recipe, notice: t('.created') }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new }
@@ -44,7 +45,7 @@ class RecipesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
+        format.html { redirect_to @recipe, notice: t('.updated') }
         format.json { render :show, status: :ok, location: @recipe }
       else
         format.html { render :edit }
@@ -58,11 +59,12 @@ class RecipesController < ApplicationController
   def destroy
     @recipe.destroy
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to recipes_url, notice: t('.destroyed') }
       format.json { head :no_content }
     end
   end
 
+  # PUT /recipes/like/1
   def like
     #Finding the recipe by its id
     @recipe = Recipe.find(params[:id])
@@ -81,6 +83,7 @@ class RecipesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # Ingredients and directions as nested attributes using cocoon gem
     def recipe_params
       params.require(:recipe).permit(:title, :description, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy])
     end

@@ -15,11 +15,13 @@
     = csrf_meta_tags
 
   %body
+    //Header
     = render 'shared/header'
 
     .container#content
       - flash.each do |key, value|
         = content_tag :div, value, class: "alert alert-info fade in"
       = yield
-
+      
+    //Footer
     = render 'shared/footer'
