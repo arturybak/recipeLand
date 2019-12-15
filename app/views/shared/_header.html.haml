@@ -20,10 +20,10 @@
         %ul.nav.navbar-nav.navbar-right
           - if user_signed_in?
             .navbar-text
-              %li= t('signed_in') + "#{current_user.email}"
+              %li= "#{current_user.email}"
             %li= link_to t('add_recipe'), new_recipe_path
             %li= link_to t('sign_out'), destroy_user_session_path, method: :delete
-            %li= link_to t('delete_account'), user_registration_path, data: { confirm: t('delete_account_confirmation') } , method: :delete
+            %li= link_to t('delete_account'), user_registration_path, data: { confirm: t('delete_account_confirmation') } , method: :delete, class: "text-danger"
           - else
             %li= link_to t('log_in'), new_user_session_path
             %li= link_to t('sign_up'), new_user_registration_path

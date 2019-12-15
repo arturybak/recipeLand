@@ -18,6 +18,16 @@
 
  $brandCol: #f61567;
 
+ .alert {
+  background: white;
+  font-weight: bold;
+  text-align: center;
+  color: $brandCol;
+ 	padding: 15px;
+ 	border-radius: 10px;
+  border: 2px solid $brandCol;
+ }
+
  body {
  	background: #ffe9df;
  }

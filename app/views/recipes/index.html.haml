@@ -1,10 +1,8 @@
 .container
-  - @recipes.each_slice(3) do |recipesRow|
-    .row
-      - recipesRow.each do |recipe|
-        .col-md-4
-          .squircle
-            = link_to recipe do
-              = image_tag(recipe.image, size: "400x400") if recipe.image.attached?
-            .title
-              %h2= link_to recipe.title, recipe
+  - @recipes.each do |recipe|
+    .col-md-4
+      .squircle
+        = link_to recipe do
+          = image_tag(recipe.image, size: "400x400") if recipe.image.attached?
+        .title
+          %h2= link_to recipe.title, recipe

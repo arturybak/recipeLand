@@ -55,6 +55,8 @@ en:
 
   home:
     home:
+      welcome: Welcome to Recipe Land!
+      welcome_p: This is a website for sharing all your favourite recipes!
       see_recipes: See Recipes
       about_me: About Me
       about_me_p: I am in love with cooking and always wanted to enable others to share their passion too!
@@ -68,10 +70,12 @@ en:
       contact_us: Contact Us
       enter_name: Enter your full name
       enter_message: What do you want to say?
-
     request_contact:
       not_enough_info: You must provide an email address, name and message
       email_sent: Thank you. We will be in touch shortly
+    search:
+      results: " recipes found matching "
+
 
   recipes:
     create:

@@ -21,7 +21,7 @@ class RecipeTest < ActiveSupport::TestCase
     recipe.title = "Recipe One"
     recipe.description = "Recipe One is delicious.."
     recipe.user_id = @user.id
-    recipe.image.attach(io: File.open('app/assets/images/vegan-chilli.jpg'),filename: 'vegan-chilli.jpg', content_type: 'image/jpg')
+    recipe.image.attach(io: File.open('app/assets/images/mojito.jpg'),filename: 'mojito.jpg', content_type: 'image/jpg')
     recipe.ingredients_attributes = [{ name: "Ingredient 1" }, { name: "Ingredient 2" }]
     recipe.directions_attributes = [{ step: "Direction 1" }, { step: "Direction 2" }]
 

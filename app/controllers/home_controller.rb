@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     #Check if all fields provided
     if email.blank? || name.blank? || message.blank?
       #If not display an error message and refresh the page
-      redirect_to request.referrer, :alert => t('.not_enough_info')
+      redirect_to contact_path, :alert => t('.not_enough_info')
     else
       #If all fields provided, send the message
       ContactMailer.contact_email(email, name, message).deliver_now

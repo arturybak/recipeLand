@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_172914) do
     t.text "step", null: false
     t.integer "recipe_id", null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "updated_at"
     t.index ["recipe_id"], name: "index_directions_on_recipe_id"
   end
 
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_172914) do
     t.string "name", null: false
     t.integer "recipe_id", null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "updated_at"
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_172914) do
     t.text "description", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|

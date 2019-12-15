@@ -1,7 +1,6 @@
 .squircle.jumbotron
-  %h1 Welcome to Recipe Land!
-  %p
-    This is a website for sharing all your favourite recipes!
+  %h1= t('.welcome')
+  %p= t('.welcome_p')
   = link_to t('.see_recipes'), recipes_path, class: "btn-danger btn-lg colored"
 .about
   .row

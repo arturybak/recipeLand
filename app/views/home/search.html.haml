@@ -1,5 +1,9 @@
 .squircle.jumbotron
-  %h1= t('search_results')
+  %h2
+    %strong= @results.size
+    =t('.results')
+    %strong= @parameter
+%br
 - @results.each do |recipe|
   .col-md-4
     .squircle

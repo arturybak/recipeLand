@@ -7,7 +7,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
     sign_in @user
     @recipe = recipes(:one)
-    @recipe_image = fixture_file_upload('app/assets/images/vegan-chilli.jpg', 'image/jpg')
+    @recipe_image = fixture_file_upload('app/assets/images/mojito.jpg', 'image/jpg')
   end
 
   test "should get index" do
