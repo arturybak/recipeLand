@@ -34,6 +34,8 @@ en:
   app_description: A blog where you can share all your favourite recipes.
   sign_out: Sign Out
   sign_up: Sign Up
+  delete_account: Delete Account
+  delete_account_confirmation: Are you sure you want to delete your account?
   log_in: Log In
   go_back: Back
   add_recipe: Add Recipe
