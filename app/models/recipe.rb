@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   #Recipe has many ingredients and directions that will be destroyed when the recipe is destroyed
-  has_many :ingredients, inverse_of: :recipe, :dependent => :delete_all
-  has_many :directions, inverse_of: :recipe, :dependent => :delete_all
+  has_many :ingredients, inverse_of: :recipe, dependent: :destroy
+  has_many :directions, inverse_of: :recipe, dependent: :destroy
 
   #Recipe has to have at least one ingredient and one direction
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
@@ -16,6 +16,9 @@ class Recipe < ApplicationRecord
 
   #Enables recipes to be voted upon, using actsasvotable gem
   acts_as_votable
+
+  #Scope for searching
+  scope :search, -> (query) {where("lower(title) LIKE ?", query)}
 
   private
   #Method to validate if recipe has an image attached

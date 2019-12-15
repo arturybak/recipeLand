@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       #Convert the input string to lowercase characters
       @parameter = params[:search].downcase
       #Trying to find recipes which title contains the input string
-      @results = Recipe.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")
+      @results = Recipe.search("%#{@parameter}%")
     end
   end
 
