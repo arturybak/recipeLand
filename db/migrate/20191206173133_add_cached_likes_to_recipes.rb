@@ -1,3 +1,4 @@
+# Adding Cached likes to speed up liking
 class AddCachedLikesToRecipes < ActiveRecord::Migration[5.2]
   def change
     change_table :recipes do |t|
