@@ -18,15 +18,15 @@
 				%h2= t('ingredients')
 				#ingredients
 					= f.simple_fields_for :ingredients do |ingredient|
-						= render 'ingredient_fields', f: ingredient
+						= render 'shared/ingredient_fields', f: ingredient
 					.links
-						= link_to_add_association f, :ingredients, class: 'btn btn-default'
+						= link_to_add_association f, :ingredients, class: 'btn btn-default', partial: 'shared/ingredient_fields'
 			.col-sm-6
 				%h2= t('directions')
 				#directions
 					= f.simple_fields_for :directions do |direction|
-						= render 'direction_fields', f: direction
+						= render 'shared/direction_fields', f: direction
 					.links
-						= link_to_add_association f, :directions, class: 'btn btn-default'
+						= link_to_add_association f, :directions, class: 'btn btn-default', partial: 'shared/direction_fields'
 	%br
 	= f.button :submit, class: "btn btn-danger center-block colored"
